@@ -6,3 +6,104 @@
 	box-sizing: border-box;
 	font-family: "Poppins", sans-serif;
 }
+
+body {
+	display: flex;
+	justify-content: center;
+	background-color: #f5f5f5;
+}
+
+p {
+	display: flex;
+	justify-content: center;
+	font-size: xx-large;
+	font-weight: 700;
+}
+
+ul {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-bottom: 20px;
+}
+
+.header button {
+	position: absolute;
+	right: 18%;
+	margin-top: -30px;
+}
+
+.header i {
+	font-size: 22px;
+}
+
+.to-do {
+	margin-top: 40px;
+	width: 60%;
+}
+
+.textInsert {
+	border: none;
+	padding: 10px;
+	border-radius: 10px;
+	outline: none;
+	width: 90%;
+}
+
+.divInsert {
+	padding: 10px;
+	background-color: #d3d3d3;
+	border-radius: 10px;
+	display: flex;
+	box-shadow: 6px 5px 10px 0px gray;
+}
+
+button {
+	width: 10%;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+
+.bx-plus {
+	font-size: 30px;
+	margin-left: 10px;
+	background-color: #2e2e2e;
+	border-radius: 30%;
+	padding: 5px;
+	color: #ffffff;
+}
+
+.divLi {
+	margin-top: 20px;
+	padding: 10px;
+	background: #d3d3d3;
+	border-radius: 10px;
+	box-shadow: 6px 5px 10px 0px gray;
+	display: flex;
+	align-items: center;
+}
+
+.divLi span {
+	width: 80%;
+	color: #696969;
+}
+
+.divLi input {
+	width: 10%;
+	outline: none;
+	accent-color: currentcolor;
+}
+
+.divLi i {
+	font-size: 22px;
+	color: #da3333;
+}
+
+li {
+	list-style-type: none;
+}
+
+.line-through {
+	text-decoration: line-through;
+}
