@@ -11,7 +11,7 @@ btnDeleteAll.onclick = () => {
 };
 
 texto.addEventListener("keypress", (e) => {
-	if (e.key === "Enter" && text.value !== "") {
+	if (e.key === "Enter" && texto.value !== "") {
 		setItemDB();
 	}
 });
@@ -50,7 +50,7 @@ function insertItemTela(text, status, i) {
 
 	li.innerHTML = `
     <div class="divLi">
-      <input type="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
+      <input type="checkbox" class="checkbox" ${status} data-i=${i} onchange="done(this, ${i});" />
       <span data-si=${i}>${text}</span>
       <button onclick="removeItem(${i})" data-i=${i}><i class='bx bx-trash'></i></button>
     </div>

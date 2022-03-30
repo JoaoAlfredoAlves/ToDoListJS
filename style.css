@@ -11,6 +11,7 @@ body {
 	display: flex;
 	justify-content: center;
 	background-color: #f5f5f5;
+	background: linear-gradient(to top right, #2e2e2e, #696969) fixed;
 }
 
 p {
@@ -18,6 +19,7 @@ p {
 	justify-content: center;
 	font-size: xx-large;
 	font-weight: 700;
+	color: #d3d3d3;
 }
 
 ul {
@@ -29,7 +31,7 @@ ul {
 .header button {
 	position: absolute;
 	right: 18%;
-	margin-top: -30px;
+	margin-top: -36px;
 }
 
 .header i {
@@ -44,17 +46,20 @@ ul {
 .textInsert {
 	border: none;
 	padding: 10px;
-	border-radius: 10px;
+	border-radius: 5px;
 	outline: none;
 	width: 90%;
+	font-size: 1rem;
+	color: #696969;
 }
 
 .divInsert {
+	margin-bottom: 15px;
 	padding: 10px;
 	background-color: #d3d3d3;
-	border-radius: 10px;
+	border-radius: 5px;
 	display: flex;
-	box-shadow: 6px 5px 10px 0px gray;
+	box-shadow: 6px 5px 10px 0.2px #696969;
 }
 
 button {
@@ -69,17 +74,14 @@ button {
 	font-size: 30px;
 	margin-left: 10px;
 	background-color: #2e2e2e;
-	border-radius: 30%;
+	border-radius: 5px;
 	padding: 5px;
 	color: #ffffff;
 }
 
 .divLi {
-	margin-top: 20px;
 	padding: 10px;
 	background: #d3d3d3;
-	border-radius: 10px;
-	box-shadow: 6px 5px 10px 0px gray;
 	display: flex;
 	align-items: center;
 }
@@ -93,6 +95,7 @@ button {
 	width: 10%;
 	outline: none;
 	accent-color: currentcolor;
+	cursor: pointer;
 }
 
 .divLi i {
@@ -102,8 +105,71 @@ button {
 
 li {
 	list-style-type: none;
+	border-bottom: #2e2e2e solid 8px;
 }
 
 .line-through {
 	text-decoration: line-through;
+}
+
+@media (max-width: 775px) {
+	input {
+		width: 70%;
+	}
+
+	.divInsert button {
+		width: 30%;
+	}
+
+	i {
+		font-size: 30px;
+		padding: 0px;
+	}
+
+	p {
+		font-size: x-large;
+	}
+}
+
+.bx-trash {
+	font-size: 30px !important;
+	color: #2e2e2e !important;
+}
+
+.bx-trash:hover {
+	color: #da3333 !important;
+}
+
+.bxs-trash-alt {
+	font-size: 30px !important;
+	border-radius: 30%;
+	color: #2e2e2e;
+}
+
+.bxs-trash-alt:hover {
+	color: #da3333;
+}
+
+.bxs-trash-alt::before {
+	transition: 0.3s;
+}
+
+i.bx-plus:hover {
+	background-color: white;
+	color: #2e2e2e;
+	transition: 0.2s;
+}
+
+i::before {
+	transition: 0.3s;
+}
+
+.checkbox {
+	height: 20px;
+	border-radius: 30%;
+	color: rgb(52, 180, 52);
+	background-color: #d3d3d3;
+	border: none;
+	outline: none;
+	cursor: pointer;
 }
