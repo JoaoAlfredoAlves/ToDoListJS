@@ -2,8 +2,33 @@ const texto = document.querySelector("input");
 const btnInsert = document.querySelector(".divInsert button");
 const btnDeleteAll = document.querySelector(".header button");
 const ul = document.querySelector("ul");
+const divToDo = document.querySelector(".to-do");
 
 let itensDB = [];
+
+texto.addEventListener("keyup", (e) => {
+	if (texto.value.length > 0) {
+		SearchInList(e.target.value);
+	} else {
+		loadItens();
+	}
+});
+
+function SearchInList(texto) {
+	let itens = document.querySelectorAll("li");
+
+	itens.forEach((item) => {
+		if (item.textContent.includes(texto)) {
+			item.style.display = "block";
+			let sugestion = createElement("span", "sugestion");
+			sugestion.innerHTML = texto;
+			document.appendChild(sugestion);
+			sugestion.display = "block";
+		} else {
+			item.style.display = "none";
+		}
+	});
+}
 
 btnDeleteAll.onclick = () => {
 	itensDB = [];
