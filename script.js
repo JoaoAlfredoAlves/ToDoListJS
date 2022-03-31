@@ -14,20 +14,11 @@ texto.addEventListener("keyup", (e) => {
 	}
 });
 
-function SearchInList(texto) {
-	let itens = document.querySelectorAll("li");
-
-	itens.forEach((item) => {
-		if (item.textContent.includes(texto)) {
-			item.style.display = "block";
-			let sugestion = createElement("span", "sugestion");
-			sugestion.innerHTML = texto;
-			document.appendChild(sugestion);
-			sugestion.display = "block";
-		} else {
-			item.style.display = "none";
-		}
-	});
+function SearchInList(textoBusca) {
+	let itensFiltrados = itensDB.filter((item) =>
+		item.item.toLowerCase().includes(textoBusca.toLowerCase())
+	);
+	preencherLista(itensFiltrados);
 }
 
 btnDeleteAll.onclick = () => {
@@ -38,12 +29,14 @@ btnDeleteAll.onclick = () => {
 texto.addEventListener("keypress", (e) => {
 	if (e.key === "Enter" && texto.value !== "") {
 		setItemDB();
+		texto.value = "";
 	}
 });
 
 btnInsert.onclick = () => {
 	if (texto.value !== "") {
 		setItemDB();
+		texto.value = "";
 	}
 };
 
@@ -63,9 +56,13 @@ function updateDB() {
 }
 
 function loadItens() {
-	ul.innerHTML = "";
 	itensDB = JSON.parse(localStorage.getItem("toDoList")) ?? [];
-	itensDB.forEach((item, i) => {
+	preencherLista(itensDB);
+}
+
+function preencherLista(itens) {
+	ul.innerHTML = "";
+	itens.forEach((item, i) => {
 		insertItemTela(item.item, item.status, i);
 	});
 }
@@ -91,8 +88,6 @@ function insertItemTela(text, status, i) {
 			.querySelector(`[data-si="${i}"]`)
 			.classList.remove("line-through");
 	}
-
-	texto.value = "";
 }
 
 function done(chk, i) {
